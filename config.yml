@@ -1,0 +1,12 @@
+app:
+  data_capture_interval: 2
+  location: "hall"
+  region: "aus-melb"
+
+
+device:
+  path:   "/sys/bus/w1/devices/"
+
+influxdb:
+  host: ec2-3-104-54-133.ap-southeast-2.compute.amazonaws.com:8086
+  db_name: raspitemp
