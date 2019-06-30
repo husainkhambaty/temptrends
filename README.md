@@ -7,4 +7,28 @@ I've also used a Time-series DB and a Data visualisation tool to capture the dat
 
 ### Lets dig deeper
 ##### sense-standalone.py
-This python script helps to capture the temperature and display it on the screen. This simply 
+This python script helps to capture the temperature and display it on the screen. Use this to write to a log file using the following command:
+
+```bash
+$ mkdir -p $HOME/temptrends && mkdir -p $HOME/temptrends/logs && export LOGS=$HOME/temptrends/logs;
+$ python3 sense-standalone.sh > $LOGS/sensor$$.log &
+```
+Note: If using an SD card, your space might fill up quick. You might want to have a log rotation logic in there.
+
+##### sense-trends.py
+This python script helps to capture the temperature and upload it to a time-series db i.e InfluxDB on an AWS EC2 box. I have a Grafana server running that can be accessed to visualise the temperature data.
+
+```bash
+python3 sense-trends.sh &
+```
+Note: Ensure the host and db is up and running.
+
+### Some Photos
+
+![Photograph 1](photo1.jpg)
+![Photograph 1](photo2.jpg)
+![Photograph 1](photo3.jpg)
+
+
+
+

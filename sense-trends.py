@@ -18,12 +18,12 @@ def log(t):
     data = 'temp,room=' + config['app']['location'] +',region=' + config['app']['region'] + ' value=' + str(t)
 
     # POST to the Influxdb hosted on the cloud host
-    #requests.post(
-    #    url="https://" + config['influxdb']['host'] + "/write?db=" + config['influxdb']['db_name'],
-    #    data=data,
-    #    headers={'Content-Type': 'application/octet-stream'}
-    #)
-    print(data)
+    requests.post(
+       url="https://" + config['influxdb']['host'] + "/write?db=" + config['influxdb']['db_name'],
+       data=data,
+       headers={'Content-Type': 'application/octet-stream'}
+    )
+
 
 def get_sensor():
     for i in os.listdir(config['device']['path']):
